@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gisella Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef4f7;
+            color: #333;
+        }
+
+        .form-box {
+            width: 420px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #28566f;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .radio-group input {
+            width: auto;
+        }
+
+        .radio-group label {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            background-color: #28566f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Name: Gisella Murcia
+        Assignment: PHP Form
+        Purpose: Collect seven fields and send them to a PHP response page.
+    -->
+    <div class="form-box">
+        <h1>Student Information</h1>
+
+        <form action="GisellaResponse.php" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="16" max="100" required>
+
+            <label for="birthdate">Birth Date:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="program">Program of Study:</label>
+            <select id="program" name="program" required>
+                <option value="">Choose a program</option>
+                <option value="Software Development">Software Development</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Business">Business</option>
+            </select>
+
+            <label>Study Preference:</label>
+            <div class="radio-group">
+                <input type="radio" id="online" name="study" value="Online" required>
+                <label for="online">Online</label>
+
+                <input type="radio" id="campus" name="study" value="On Campus">
+                <label for="campus">On Campus</label>
+            </div>
+
+            <label for="comments">Why did you choose this program?</label>
+            <textarea id="comments" name="comments" rows="4" required></textarea>
+
+            <input type="submit" value="Submit Form">
+        </form>
+    </div>
+</body>
+</html>
